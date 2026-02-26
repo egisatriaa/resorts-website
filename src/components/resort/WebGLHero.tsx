@@ -43,6 +43,8 @@ export function WebGLHero() {
 
     for (let i = FRAME_START; i <= FRAME_END; i++) {
       const img = new Image();
+      // Set crossOrigin to anonymous BEFORE setting src to allow WebGL to use the data
+      img.crossOrigin = "anonymous";
       const frameNum = String(i).padStart(3, '0');
       img.src = `${BASE_URL}frame_${frameNum}_delay-0.04s.webp`;
       img.onload = () => {
@@ -127,12 +129,13 @@ export function WebGLHero() {
 
     let rafId: number;
     const render = () => {
-      // frameIndex = Math.floor(progress * 104)
+      // Map scroll progress (0-1) to frame index (0-104)
       const frameIndex = Math.min(FRAME_END, Math.max(0, Math.floor(scrollProgress * FRAME_END)));
       const img = imagesRef.current[frameIndex];
 
       if (img && img.complete) {
         gl.bindTexture(gl.TEXTURE_2D, textureRef.current);
+        // Upload the selected frame to the GPU texture
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
         gl.drawArrays(gl.TRIANGLES, 0, 6);
       }
