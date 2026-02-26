@@ -36,14 +36,14 @@ export function WebGLHero() {
   const textureRef = useRef<WebGLTexture | null>(null);
   const programRef = useRef<WebGLProgram | null>(null);
 
-  // Progressive Loading
+  // Progressive Loading with CORS support
   useEffect(() => {
     let loaded = 0;
     const images: HTMLImageElement[] = [];
 
     for (let i = FRAME_START; i <= FRAME_END; i++) {
       const img = new Image();
-      // Enable CORS for WebGL texture operations
+      // Critical: Enable CORS for WebGL texture operations
       img.crossOrigin = "anonymous";
       const frameNum = String(i).padStart(3, '0');
       img.src = `${BASE_URL}frame_${frameNum}_delay-0.04s.webp`;
@@ -152,7 +152,16 @@ export function WebGLHero() {
         ref={canvasRef} 
         className="w-full h-full"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-background/20 pointer-events-none" />
+      
+      {/* Cinematic Dark Overlay Layers */}
+      {/* 1. Global subtle darkening for basic text contrast */}
+      <div className="absolute inset-0 bg-black/35 pointer-events-none" />
+      
+      {/* 2. Deep vertical vignette to anchor text and scroll indicators */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none" />
+      
+      {/* 3. Subtle horizontal vignette for ultra-cinematic wide-screen feel */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20 pointer-events-none" />
     </div>
   );
 }
