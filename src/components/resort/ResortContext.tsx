@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
@@ -46,6 +47,10 @@ type ResortContextType = {
   theme: 'light' | 'dark';
   setTheme: (theme: 'light' | 'dark') => void;
   isChanging: boolean;
+  loadProgress: number;
+  setLoadProgress: (progress: number) => void;
+  scrollProgress: number;
+  setScrollProgress: (progress: number) => void;
 };
 
 const ResortContext = createContext<ResortContextType | undefined>(undefined);
@@ -54,6 +59,8 @@ export function ResortProvider({ children }: { children: React.ReactNode }) {
   const [index, setIndex] = useState(0);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [isChanging, setIsChanging] = useState(false);
+  const [loadProgress, setLoadProgress] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const currentResort = VARIATIONS[index];
 
@@ -83,7 +90,6 @@ export function ResortProvider({ children }: { children: React.ReactNode }) {
   };
 
   useEffect(() => {
-    // Update body class for dark mode
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
@@ -99,7 +105,11 @@ export function ResortProvider({ children }: { children: React.ReactNode }) {
       prevVariation, 
       theme, 
       setTheme,
-      isChanging
+      isChanging,
+      loadProgress,
+      setLoadProgress,
+      scrollProgress,
+      setScrollProgress
     }}>
       {children}
     </ResortContext.Provider>
