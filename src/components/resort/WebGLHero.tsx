@@ -153,15 +153,13 @@ export function WebGLHero() {
         className="w-full h-full"
       />
       
-      {/* Cinematic Dark Overlay Layers */}
-      {/* 1. Global subtle darkening for basic text contrast */}
-      <div className="absolute inset-0 bg-black/35 pointer-events-none" />
-      
-      {/* 2. Deep vertical vignette to anchor text and scroll indicators */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none" />
-      
-      {/* 3. Subtle horizontal vignette for ultra-cinematic wide-screen feel */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20 pointer-events-none" />
+      {/* Subtle Cinematic Scrim */}
+      <div 
+        className="absolute inset-0 pointer-events-none" 
+        style={{
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.20) 40%, rgba(0,0,0,0.35) 100%)'
+        }}
+      />
     </div>
   );
 }
