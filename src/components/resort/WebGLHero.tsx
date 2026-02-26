@@ -43,7 +43,7 @@ export function WebGLHero() {
 
     for (let i = FRAME_START; i <= FRAME_END; i++) {
       const img = new Image();
-      // Set crossOrigin to anonymous BEFORE setting src to allow WebGL to use the data
+      // Enable CORS for WebGL texture operations
       img.crossOrigin = "anonymous";
       const frameNum = String(i).padStart(3, '0');
       img.src = `${BASE_URL}frame_${frameNum}_delay-0.04s.webp`;
@@ -147,7 +147,7 @@ export function WebGLHero() {
   }, [scrollProgress]);
 
   return (
-    <div className={`fixed inset-0 z-0 transition-opacity duration-1000 ${isChanging ? 'opacity-0' : 'opacity-100'}`}>
+    <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${isChanging ? 'opacity-0' : 'opacity-100'}`}>
       <canvas 
         ref={canvasRef} 
         className="w-full h-full"
