@@ -107,24 +107,24 @@ export function HeroContent() {
                     <h2 className="playfair-title font-light uppercase leading-[1.2] tracking-tight">
                         {/* Row 1 */}
                         <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-                            Panoramic
+                            {currentResort.secondaryText.row1Main}
                             <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-sans tracking-[0.15em] mx-3 align-middle font-light text-white/90">
-                                Views,
+                                {currentResort.secondaryText.row1Highlight}
                             </span>
-                            Spacious Layouts,
+                            {currentResort.secondaryText.row1Tail}
                         </div>
 
                         {/* Row 2 */}
                         <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 md:mt-3">
-                            Gated Community — Spending Time
+                            {currentResort.secondaryText.row2Main}
                             <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-sans tracking-[0.15em] mx-3 align-middle font-light text-white/90">
-                                At
+                                {currentResort.secondaryText.row2Highlight}
                             </span>
                         </div>
 
                         {/* Row 3 */}
                         <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2 md:mt-3">
-                            Home Is Simply A Pleasure.
+                            {currentResort.secondaryText.row3Main}
                         </div>
                     </h2>
                 </div>

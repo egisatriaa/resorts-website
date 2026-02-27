@@ -9,6 +9,14 @@ export type ResortVariation = {
     description: string;
     accentColor: string;
     mode: 'light' | 'dark' | 'cinematic';
+    secondaryText: {
+        row1Main: string;
+        row1Highlight: string;
+        row1Tail: string;
+        row2Main: string;
+        row2Highlight: string;
+        row3Main: string;
+    };
 };
 
 const VARIATIONS: ResortVariation[] = [
@@ -20,6 +28,14 @@ const VARIATIONS: ResortVariation[] = [
             'Where modern elegance meets the spirit of Bali. Private villas embraced by lush nature, crafted for serene escapes, romantic moments, and unforgettable family stays.',
         accentColor: '#2F86A6',
         mode: 'cinematic',
+        secondaryText: {
+            row1Main: 'Panoramic',
+            row1Highlight: 'Views,',
+            row1Tail: 'Spacious Layouts,',
+            row2Main: 'Gated Community — Spending Time',
+            row2Highlight: 'At',
+            row3Main: 'Home Is Simply A Pleasure.',
+        },
     },
     {
         id: 2,
@@ -29,6 +45,14 @@ const VARIATIONS: ResortVariation[] = [
             'Immerse yourself in a secluded paradise where the sound of the ocean serenades your soul. A masterclass in sustainable luxury and organic design.',
         accentColor: '#a37a33ff',
         mode: 'light',
+        secondaryText: {
+            row1Main: 'Untouched',
+            row1Highlight: 'Nature,',
+            row1Tail: 'Private Beaches,',
+            row2Main: 'Tropical Sanctuary — Finding Peace',
+            row2Highlight: 'By',
+            row3Main: 'The Sea Is Rejuvenating.',
+        },
     },
     {
         id: 3,
@@ -38,6 +62,14 @@ const VARIATIONS: ResortVariation[] = [
             'A retreat crafted for those who seek deep relaxation. Every element is inspired by traditional Balinese philosophy and contemporary comfort.',
         accentColor: '#5C4E40',
         mode: 'dark',
+        secondaryText: {
+            row1Main: 'Ancient',
+            row1Highlight: 'Wisdom,',
+            row1Tail: 'Modern Comfort,',
+            row2Main: 'Soulful Architecture — Returning',
+            row2Highlight: 'To',
+            row3Main: 'Balance Feels Effortless.',
+        },
     },
 ];
 
