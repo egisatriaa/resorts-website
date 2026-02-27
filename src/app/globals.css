@@ -1,85 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.playfair-title {
+    font-family: 'Playfair', serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: 'wdth' 100;
+}
 @layer base {
-  :root {
-    --background: 195 20% 98%; /* Soft Light Grey-Blue #F0F4F5 */
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 195 56% 55%; /* Ocean Blue #4DABCC */
-    --primary-foreground: 195 20% 98%;
-    --secondary: 37 66% 69%; /* Warm Sand Gold #E6BE7A */
-    --secondary-foreground: 222 47% 11%;
-    --muted: 195 10% 94%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 37 66% 69%;
-    --accent-foreground: 222 47% 11%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 195 10% 90%;
-    --input: 195 10% 90%;
-    --ring: 195 56% 55%;
-    --radius: 0.75rem;
-  }
+    :root {
+        --background: 195 20% 98%; /* Soft Light Grey-Blue #F0F4F5 */
+        --foreground: 222 47% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 47% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+        --primary: 195 56% 55%; /* Ocean Blue #4DABCC */
+        --primary-foreground: 195 20% 98%;
+        --secondary: 37 66% 69%; /* Warm Sand Gold #E6BE7A */
+        --secondary-foreground: 222 47% 11%;
+        --muted: 195 10% 94%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 37 66% 69%;
+        --accent-foreground: 222 47% 11%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 195 10% 90%;
+        --input: 195 10% 90%;
+        --ring: 195 56% 55%;
+        --radius: 0.75rem;
+    }
 
-  .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 195 56% 55%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 37 66% 40%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 37 66% 40%;
-    --accent-foreground: 210 40% 98%;
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 195 56% 55%;
-  }
+    .dark {
+        --background: 222 47% 11%;
+        --foreground: 210 40% 98%;
+        --card: 222 47% 11%;
+        --card-foreground: 210 40% 98%;
+        --popover: 222 47% 11%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 195 56% 55%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 37 66% 40%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 217 32% 17%;
+        --muted-foreground: 215 20% 65%;
+        --accent: 37 66% 40%;
+        --accent-foreground: 210 40% 98%;
+        --border: 217 32% 17%;
+        --input: 217 32% 17%;
+        --ring: 195 56% 55%;
+    }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground overflow-x-hidden;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-headline;
-  }
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground overflow-x-hidden;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-headline;
+    }
 }
 
 .parallax-container {
-  will-change: transform;
+    will-change: transform;
 }
 
 canvas {
-  display: block;
+    display: block;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
